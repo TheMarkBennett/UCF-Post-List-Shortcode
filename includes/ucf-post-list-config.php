@@ -107,7 +107,8 @@ if ( !class_exists( 'UCF_Post_List_Config' ) ) {
 					'default' => false
 				) ),
 				'excerpt_length'      => new UCF_Post_List_Option( 'excerpt_length', array(
-					'format_callback' => array( 'UCF_Post_List_Config', 'format_option_int_or_null' )
+					'default'         => 55,
+					'format_callback' => array( 'UCF_Post_List_Config', 'format_option_int' )
 				) ),
 				'display_search'      => new UCF_Post_List_Option( 'display_search', array(
 					'default' => false,

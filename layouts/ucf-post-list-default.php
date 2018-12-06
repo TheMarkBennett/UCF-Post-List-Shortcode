@@ -44,9 +44,9 @@ if ( !function_exists( 'ucf_post_list_display_default' ) ) {
 					 		<p class="ucf_post_list_excerpt">
 						 		<?php  
 									if( empty( $item->post_excerpt ) ):
-										echo wp_trim_words($item->post_content, 55 ); //later changes 55 to a variable
+										echo wp_trim_words($item->post_content, $atts['excerpt_length'] ); //later changes 55 to a variable
 									else:
-										echo wp_trim_words($item->post_excerpt, 55 );		
+										echo wp_trim_words($item->post_excerpt, $atts['excerpt_length'] );		
 									endif;						
 								
 								?>
