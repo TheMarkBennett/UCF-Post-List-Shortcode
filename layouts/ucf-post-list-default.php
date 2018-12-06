@@ -39,7 +39,20 @@ if ( !function_exists( 'ucf_post_list_display_default' ) ) {
 			<ul class="ucf-post-list-items">
 				<?php foreach ( $posts as $item ): ?>
 				<li class="ucf-post-list-item">
-					<a href="<?php echo get_permalink( $item->ID ); ?>"><?php echo $item->post_title; ?></a>
+					<a href="<?php echo get_permalink( $item->ID ); ?>"><?php echo $item->post_title; ?>
+					<?php if( $atts['excerpt'] ) : ?>
+					 		<p class="ucf_post_list_excerpt">
+						 		<?php  
+									if( empty( $item->post_excerpt ) ):
+										echo wp_trim_words($item->post_content, 55 ); //later changes 55 to a variable
+									else:
+										echo $item->post_excerpt;		
+									endif;						
+								
+								?>
+							 	</p>						
+							<?php endif; ?>					
+					</a>
 				</li>
 				<?php endforeach; ?>
 			</ul>
