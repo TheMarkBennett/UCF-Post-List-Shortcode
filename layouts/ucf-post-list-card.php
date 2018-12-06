@@ -61,7 +61,16 @@ if ( ! function_exists( 'ucf_post_list_display_card' ) ) {
 						<div class="ucf-post-list-card-block">
 							<h3 class="ucf-post-list-card-title"><?php echo $item->post_title; ?></h3>
 							<?php if( $atts['excerpt'] ) : ?>
-							 	<p><?php echo $item->post_excerpt; ?></p>							
+					 		<p>
+						 		<?php  
+									if( empty( $item->post_excerpt ) ):
+										echo wp_trim_words($item->post_content, 55 ); //later changes 55 to a variable
+									else:
+										$item->post_excerpt;		
+									endif;						
+								
+								?>
+							 	</p>							
 							<?php endif; ?>
 							<p class="ucf-post-list-card-text"><?php echo $date; ?></p>
 						</div>
