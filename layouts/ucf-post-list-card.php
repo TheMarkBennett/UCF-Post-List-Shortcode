@@ -60,6 +60,9 @@ if ( ! function_exists( 'ucf_post_list_display_card' ) ) {
 						<?php endif; ?>
 						<div class="ucf-post-list-card-block">
 							<h3 class="ucf-post-list-card-title"><?php echo $item->post_title; ?></h3>
+							<?php if( $atts['excerpt'] ) : ?>
+							 	<p><?php echo $item->post_excerpt; ?></p>							
+							<?php endif; ?>
 							<p class="ucf-post-list-card-text"><?php echo $date; ?></p>
 						</div>
 					</a>
